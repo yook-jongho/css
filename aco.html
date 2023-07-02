@@ -5,66 +5,162 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ai-Coordinator</title>
+    <script
+      src="https://kit.fontawesome.com/5e28a297e1.js"
+      crossorigin="anonymous"
+    ></script>
+
     <style>
       #main-container {
-        width: 1080px;
+        /* width: 940px; */
         margin: 10px auto;
-        padding: 20px;
-        border: 1px solid #bcbcbc;
+        padding: 10px;
+        /* border: 1px solid #bcbcbc; */
       }
+
       #main-header {
-        padding: 20px;
+        /* width: 940px; */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        margin: 0 auto;
+        padding: 10px;
         margin-bottom: 20px;
-        border: 1px solid #bcbcbc;
+        border-bottom: 1px solid #bcbcbc;
       }
+
+      #icons-ul {
+        width: 100px;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+      }
+
+      #icons-li {
+        font-size: 20px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+
       #main-content {
-        width: 830px;
-        min-height: 300px;
-        padding: 20px;
-        margin-bottom: 20px;
-        float: right;
-        border: 1px solid #bcbcbc;
+        width: 70%;
+        /* padding: 20px; */
+        margin: 0 auto;
+        /* border: 1px solid #bcbcbc; */
       }
+
       #sidebar {
-        width: 160px;
-        min-height: 300px;
-        padding: 20px;
+        width: 10%;
+        padding-right: 20px;
         margin-bottom: 20px;
+
         float: left;
-        border: 1px solid #bcbcbc;
+        border-right: 1px solid #bcbcbc;
       }
+
+      #sidebar > ul {
+        padding-left: 0px;
+        list-style: none;
+        font-size: auto;
+      }
+
+      #sidebar > ul > li {
+        border-left: 5px solid #111111;
+        margin-bottom: 10px;
+        padding-left: 10px;
+        transition: background-color 0.5s ease, color 0.5s ease;
+      }
+      #sidebar > ul > li:hover {
+        background-color: black;
+        color: white;
+      }
+
       #footer {
         clear: both;
         padding: 20px;
         border: 1px solid #bcbcbc;
       }
-      @media (max-width: 600px) {
+
+      @media (max-width: 970px) {
         #main-container {
           width: auto;
         }
-        #main-content {
-          float: none;
+        #main-header {
           width: auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
         }
-        #main-sidebar {
-          float: none;
+        #main-header > h1 {
+          font-size: 20px;
+        }
+        #icons-ul {
+          width: 50px;
+          padding-left: 0px;
+        }
+        #icons-li {
+          font-size: 15px;
+          align-items: center;
+        }
+        #sidebar {
           width: auto;
+          min-height: auto;
+          float: none;
+          align-items: center;
+          text-align: center;
+          border: 1px solid #bcbcbc;
+          padding-right: 0px;
+        }
+        #sidebar > ul {
+          /* width: auto; */
+          display: flex;
+          flex-direction: row;
+          margin: 0 auto;
+          padding-left: 0px;
+          list-style: none;
+          font-size: 10px;
+        }
+
+        #sidebar > ul > li {
+          border-left: none;
+          /* border-bottom: 0.5px solid black; */
+          margin: 10px auto;
+          padding-left: 0;
+        }
+        #main-content {
+          width: auto;
+          min-height: auto;
+          float: none;
+          align-items: center;
+          text-align: center;
         }
       }
     </style>
   </head>
   <body>
+    <div id="main-header">
+      <h1>AI COORDINATOR</h1>
+      <ul id="icons-ul">
+        <li id="icons-li">
+          <i class="fa-solid fa-user"></i>
+        </li>
+        <li id="icons-li">
+          <i class="fa-solid fa-right-from-bracket"></i>
+        </li>
+      </ul>
+    </div>
     <div id="main-container">
-      <div id="main-header">
-        <h1>AI COORDINATOR</h1>
-      </div>
       <div id="sidebar">
-        <h2>Sidebar</h2>
+        <h3>Sidebar</h3>
         <ul>
-          <li>test 1</li>
-          <li>test 2</li>
-          <li>test 3</li>
-          <!-- <li>test 4</li> -->
+          <li>RECOMMAND</li>
+          <li>MY CLOTH</li>
+          <li>MY PAGE</li>
+          <li>CODY</li>
         </ul>
       </div>
       <div id="main-content">
