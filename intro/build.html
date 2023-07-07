@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Introduce</title>
+        <style>
+            body {
+                margin: 0px;
+            }
+            .main-container {
+                width: auto;
+                display: flex;
+                flex-direction: row;
+            }
+
+            input {
+                display: none;
+            }
+
+            ul {
+                list-style: none;
+            }
+
+            a {
+                text-decoration: none;
+                color: black;
+            }
+
+            /* 사이드 바 */
+            .sidebar {
+                width: 20%;
+                min-height: 800px;
+                padding: 20px;
+
+                align-items: center;
+                text-align: center;
+
+                border-right: 1px solid #bcbcbc;
+                background-color: cornflowerblue;
+            }
+
+            /* 내 이미지 */
+            img {
+                width: 170px;
+                height: 170px;
+                margin-bottom: 20px;
+                border: 2px solid #bcbcbc;
+                border-radius: 50%;
+            }
+
+            /* 부가설명 */
+            .myImg > span {
+                display: inline-block;
+                margin-bottom: 10px;
+                font-size: 20px;
+            }
+
+            .sidebar > hr {
+                border-style: dashed;
+                color: white;
+                margin-top: 20px;
+                margin-bottom: 60px;
+            }
+
+            /* 연락처 */
+            .commu > i {
+                display: block;
+                font-size: 60px;
+                margin: 20px auto;
+                transition: all 0.3s ease;
+            }
+
+            .commu > i:hover {
+                font-size: 66px;
+            }
+
+            /* 주 내용 */
+            .main-content {
+                width: 80%;
+            }
+
+            /* 헤더 */
+            .main-header {
+                display: flex;
+                flex-direction: row;
+                width: auto;
+                padding: 15px;
+                border-bottom: 1px solid #bcbcbc;
+                align-items: center;
+            }
+
+            .main-header > span {
+                margin-right: 40px;
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            .main-header > label {
+                margin-right: 20px;
+                transition: all 0.5s ease;
+            }
+
+            #aboutme:checked ~ .tab1,
+            #project:checked ~ .tab2,
+            #activity:checked ~ .tab3,
+            .main-header > label:hover {
+                color: cornflowerblue;
+                border-bottom: 1px solid cornflowerblue;
+            }
+
+            .main-header > ul {
+                list-style: none;
+            }
+
+            .main-header > ul > li {
+                display: inline-block;
+                margin-right: 20px;
+                transition: all 0.5s ease;
+            }
+
+            .main-container > ul > li:visited,
+            .main-header > ul > li:hover {
+                font-size: 20px;
+            }
+
+            .content {
+                padding: 25px;
+            }
+
+            .content > div {
+                margin-bottom: 40px;
+            }
+
+            .content ~ h2 {
+                border: 1px solid skyblue;
+            }
+
+            .main-list > li {
+                font-size: 16px;
+                font-weight: bold;
+                padding: 10px;
+                margin: 20px;
+                border-radius: 5px;
+                box-shadow: 3px 3px 5px gray;
+            }
+
+            .main-list > li::before {
+                padding-right: 10px;
+                color: cornflowerblue;
+                font-family: "fontawesome";
+                content: "\f205";
+            }
+
+            .sub-list {
+                margin-left: 10px;
+                padding-left: 30px;
+                border-left: 1px dashed #bcbcbc;
+            }
+            .sub-list > li {
+                margin: 5px auto;
+                font-weight: 400;
+                font-size: 16px;
+            }
+
+            @media (max-width: 970px) {
+                .main-container {
+                    display: block;
+                }
+                .sidebar {
+                    width: auto;
+                    min-height: auto;
+                }
+                .sidebar > .myImg {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+                .main-content {
+                    width: auto;
+                }
+            }
+        </style>
+        <script
+            src="https://kit.fontawesome.com/5e28a297e1.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <div class="main-container">
+            <div class="sidebar">
+                <div class="myImg">
+                    <img
+                        src="https://user-images.githubusercontent.com/39684697/228556629-900760fa-ca27-4361-83bd-dde1c50f8208.jpeg"
+                    />
+                    <span>YOOK JONG HO</span>
+                    <span>FRONT END DEVELOPER</span>
+                </div>
+                <hr />
+                <div class="commu">
+                    <i class="fa-solid fa-mobile"></i>
+                    <span> mobile </span>
+                    <i class="fa-solid fa-envelope"></i>
+                    <span> mail </span>
+                    <i class="fa-brands fa-github"></i>
+                    <span
+                        ><a href="https://github.com/yook-jongho"> git hub</a>
+                    </span>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <div class="main-header">
+                    <span>Yook Jong Ho</span>
+                    <input type="radio" id="aboutme" name="show" checked />
+                    <input type="radio" id="project" name="show" />
+                    <input type="radio" id="activity" name="show" />
+
+                    <label for="aboutme" class="tab1">About me</label>
+                    <label for="project" class="tab2">Project</label>
+                    <label for="activity" class="tab3">Activity</label>
+                </div>
+
+                <div class="content">
+                    <div class="Aboutme-content">
+                        <h2>About Me</h2>
+                        <p>
+                            안녕하세요! 저는 웹 프론트엔드 개발자로 성장하고
+                            있는 육종호 입니다.<br />
+                            코드와 디자인이 결합되어 사용자에게 멋진 경험을
+                            제공하는<br />
+                            웹 프론트엔드 개발에 대한 열정을 가지고 있습니다.
+                            <br />
+                        </p>
+                    </div>
+                    <hr />
+                    <div class="Project-content">
+                        <h2>Project</h2>
+                        <ul class="main-list">
+                            <li>
+                                Ai Coordinator - 인공지능 기반 코디 추천 서비스
+                                <ul class="sub-list">
+                                    <li>Front End 담당</li>
+                                    <li>
+                                        React, TypeScript, Style-Component 사용
+                                    </li>
+                                    <li>
+                                        GitHub 주소 -
+                                        <a
+                                            href="https://github.com/kookmin-sw/capstone-2023-38"
+                                            >https://github.com/kookmin-sw/capstone-2023-38</a
+                                        >
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                뭉쳐야 싸다! 뭉싸 - 공동 구매 서비스
+                                <ul class="sub-list">
+                                    <li>Front End 담당</li>
+                                    <li>Java 사용</li>
+                                    <li>
+                                        GitHub 주소 -
+                                        <a
+                                            href="https://github.com/wookingwoo/gonggu-manman"
+                                            >https://github.com/wookingwoo/gonggu-manman</a
+                                        >
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                elaina-blog - 웹페이지 기반 블로그 서비스
+                                <ul class="sub-list">
+                                    <li>Front End 담당</li>
+                                    <li>
+                                        React, TypeScript, Style-Component 사용
+                                    </li>
+                                    <li>
+                                        GitHub 주소 -
+                                        <a
+                                            href="https://github.com/yook-jongho/elaina-blog"
+                                            >https://github.com/yook-jongho/elaina-blog</a
+                                        >
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <hr />
+                    <div class="Career-content">
+                        <h2>Career & Activity</h2>
+                        <ul class="main-list">
+                            <li>
+                                2022-07 ~ 2022-10 (주)토킹어바웃 프론트엔드 개발
+                            </li>
+                            <li>
+                                2021-06 ~ 2021-08 (주)토킹어바웃 프론트엔드 개발
+                                인턴쉽 참여
+                            </li>
+                            <li>
+                                2021-04 ~ 2021-06 삼성 sds 고등 코딩캠퍼스
+                                대학봉사단
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
