@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>스크롤 예제</title>
+        <style>
+            body {
+                height: 2000px; /* 스크롤할 내용이 있는 높이로 설정합니다. */
+            }
+
+            section {
+                height: 100vh; /* 화면 높이와 같은 높이로 설정합니다. */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 3em;
+            }
+        </style>
+    </head>
+    <body>
+        <section id="section1">Section 1</section>
+        <section id="section2">Section 2</section>
+        <section id="section3">Section 3</section>
+
+        <script>
+            // 스크롤 이벤트 핸들러를 등록합니다.
+            window.addEventListener(
+                "wheel",
+                function (e) {
+                    e.preventDefault();
+                },
+                { passive: false }
+            );
+
+            function scrollToNextSection() {
+                const currentSection = document.querySelector(".active");
+                const nextSection = currentSection.nextElementSibling;
+
+                if (nextSection !== null) {
+                    currentSection.classList.remove("active");
+                    nextSection.classList.add("active");
+                    nextSection.scrollIntoView({ behavior: "smooth" });
+                }
+            }
+
+            function scrollToPrevSection() {
+                const currentSection = document.querySelector(".active");
+                const prevSection = currentSection.previousElementSibling;
+
+                if (prevSection !== null) {
+                    currentSection.classList.remove("active");
+                    prevSection.classList.add("active");
+                    prevSection.scrollIntoView({ behavior: "smooth" });
+                }
+            }
+        </script>
+    </body>
+</html>
