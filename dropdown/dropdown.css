@@ -1,0 +1,44 @@
+.selector {
+    width: 200px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.options {
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+
+    border: 1px solid black;
+    border-radius: 5px;
+    /* box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.41); */
+
+    visibility: hidden; /* 초기에는 숨겨진 상태로 설정 */
+    opacity: 0;
+    transform: translateY(-5%);
+    transition: opacity 0.1s ease, transform 0.1s ease, linear 0.1s; /* 애니메이션 효과 추가 */
+}
+
+.content {
+    display: flex;
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+}
+.content:hover {
+    background-color: lightgray;
+}
+
+.options.expended {
+    width: 220px;
+    visibility: visible;
+    opacity: 1; /* 클래스 추가 시 투명도를 1로 설정하여 스르륵 나타나는 효과 적용 */
+    transform: translateY(
+        0
+    ); /* 클래스 추가 시 요소를 원래 위치로 이동시켜 스르륵 나타나는 효과 적용 */
+    transition-delay: 0s; /* 클래스 추가 시 transition-delay를 0으로 설정하여 스르륵 나타나는 효과 적용 */
+}
